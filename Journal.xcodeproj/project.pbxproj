@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9B153811B581627008D80B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9B1537F1B581627008D80B1 /* Main.storyboard */; };
 		F9F3EA4A1B5808B0000FCC27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3EA491B5808B0000FCC27 /* AppDelegate.swift */; };
 		F9F3EA511B5808B0000FCC27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EA501B5808B0000FCC27 /* Images.xcassets */; };
 		F9F3EA541B5808B0000FCC27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EA521B5808B0000FCC27 /* LaunchScreen.xib */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F9B153801B581627008D80B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9F3EA441B5808B0000FCC27 /* Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F3EA481B5808B0000FCC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9F3EA491B5808B0000FCC27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				F9F3EA491B5808B0000FCC27 /* AppDelegate.swift */,
+				F9B1537F1B581627008D80B1 /* Main.storyboard */,
 				F9F3EA501B5808B0000FCC27 /* Images.xcassets */,
 				F9F3EA521B5808B0000FCC27 /* LaunchScreen.xib */,
 				F9F3EA471B5808B0000FCC27 /* Supporting Files */,
@@ -186,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B153811B581627008D80B1 /* Main.storyboard in Resources */,
 				F9F3EA541B5808B0000FCC27 /* LaunchScreen.xib in Resources */,
 				F9F3EA511B5808B0000FCC27 /* Images.xcassets in Resources */,
 			);
@@ -228,6 +232,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F9B1537F1B581627008D80B1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9B153801B581627008D80B1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		F9F3EA521B5808B0000FCC27 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
