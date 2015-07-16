@@ -11,7 +11,6 @@
 		F9F3EA511B5808B0000FCC27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EA501B5808B0000FCC27 /* Images.xcassets */; };
 		F9F3EA541B5808B0000FCC27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F3EA521B5808B0000FCC27 /* LaunchScreen.xib */; };
 		F9F3EA601B5808B0000FCC27 /* JournalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3EA5F1B5808B0000FCC27 /* JournalTests.swift */; };
-		F9F3EA6A1B581138000FCC27 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F3EA691B581138000FCC27 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +32,6 @@
 		F9F3EA591B5808B0000FCC27 /* JournalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F3EA5E1B5808B0000FCC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9F3EA5F1B5808B0000FCC27 /* JournalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTests.swift; sourceTree = "<group>"; };
-		F9F3EA691B581138000FCC27 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +73,6 @@
 		F9F3EA461B5808B0000FCC27 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
-				F9F3EA691B581138000FCC27 /* main.swift */,
 				F9F3EA491B5808B0000FCC27 /* AppDelegate.swift */,
 				F9F3EA501B5808B0000FCC27 /* Images.xcassets */,
 				F9F3EA521B5808B0000FCC27 /* LaunchScreen.xib */,
@@ -209,7 +206,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F3EA4A1B5808B0000FCC27 /* AppDelegate.swift in Sources */,
-				F9F3EA6A1B581138000FCC27 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
