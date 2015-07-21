@@ -10,15 +10,10 @@ import UIKit
 class JournalTableViewController: UITableViewController {
 
     let cellReuseIdentifier = "JournalEntryCell"
+    let sampleData = (0..<1000).map { "Cell \($0)" }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +28,14 @@ class JournalTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: determined by number of journal entries
-        return 0
+       return sampleData.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! UITableViewCell
-        // Configure the cell...
+        if let label = cell.textLabel {
+            label.text = sampleData[indexPath.row]
+        }
         return cell
     }
 
