@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dLd-CW-xNB">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -53,7 +54,7 @@
         <!--Journal Entry View Controller-->
         <scene sceneID="kdM-i8-hKV">
             <objects>
-                <viewController id="LLO-re-cLh" userLabel="Journal Entry View Controller" sceneMemberID="viewController">
+                <viewController id="LLO-re-cLh" userLabel="Journal Entry View Controller" customClass="JournalEntryViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jfH-01-D7a"/>
                         <viewControllerLayoutGuide type="bottom" id="sYR-Gz-UdA"/>
@@ -61,8 +62,25 @@
                     <view key="view" contentMode="scaleToFill" id="d2h-Sq-Kja">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="JournalEntry contents" translatesAutoresizingMaskIntoConstraints="NO" id="1Am-XX-fiK">
+                                <rect key="frame" x="16" y="72" width="568" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sYR-Gz-UdA" firstAttribute="top" secondItem="1Am-XX-fiK" secondAttribute="bottom" constant="20" id="06X-HF-mjx"/>
+                            <constraint firstItem="1Am-XX-fiK" firstAttribute="top" secondItem="jfH-01-D7a" secondAttribute="bottom" constant="8" id="OrM-in-3LE"/>
+                            <constraint firstItem="1Am-XX-fiK" firstAttribute="leading" secondItem="d2h-Sq-Kja" secondAttribute="leadingMargin" id="dbn-2i-LHw"/>
+                            <constraint firstItem="1Am-XX-fiK" firstAttribute="trailing" secondItem="d2h-Sq-Kja" secondAttribute="trailingMargin" id="eIE-KM-4c5"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="journalEntryContents" destination="1Am-XX-fiK" id="pIT-yp-NnQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34N-t0-5jT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
