@@ -10,6 +10,7 @@ import UIKit
 class JournalTableViewController: UITableViewController {
 
     let cellReuseIdentifier = "JournalEntryCell"
+    let journalEntrySegueIdentifier = "journalEntry"
     let journal = Journal(entries: (0..<1000).map { JournalEntry(date: NSDate(), contents: "Contents for entry \($0)") })
     
     override func viewDidLoad() {
@@ -39,11 +40,13 @@ class JournalTableViewController: UITableViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let journalEntryViewController = segue.destinationViewController as? JournalEntryViewController,
-            cell = sender as? UITableViewCell,
-            indexPath = self.tableView.indexPathForCell(cell),
-            entry = journal.entry(indexPath.row) {
-                journalEntryViewController.journalEntry = entry
+        if segue.identifier == journalEntrySegueIdentifier {
+            if let journalEntryViewController = segue.destinationViewController as? JournalEntryViewController,
+                cell = sender as? UITableViewCell,
+                indexPath = self.tableView.indexPathForCell(cell),
+                entry = journal.entry(indexPath.row) {
+                    journalEntryViewController.journalEntry = entry
+            }
         }
     }
 
