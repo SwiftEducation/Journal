@@ -48,7 +48,7 @@
                     <navigationItem key="navigationItem" title="My Journal" id="s5z-1F-Twl">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="v8D-yx-Tbn">
                             <connections>
-                                <segue destination="IC3-3m-Fpe" kind="presentation" id="nhM-Em-NTY"/>
+                                <segue destination="IC3-3m-Fpe" kind="presentation" identifier="newJournalEntry" id="nhM-Em-NTY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,6 +84,11 @@
                                                 <action selector="cancel:" destination="IC3-3m-Fpe" id="zpF-ng-Fro"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ErX-O0-a3K">
+                                            <connections>
+                                                <action selector="save:" destination="IC3-3m-Fpe" id="4dk-Wq-XQ6"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -99,6 +104,9 @@
                             <constraint firstItem="hgK-DF-UGm" firstAttribute="top" secondItem="50e-7S-piT" secondAttribute="bottom" constant="44" id="lNx-Sr-97f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="journalEntryContents" destination="hgK-DF-UGm" id="F32-lI-EGC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OOV-s4-WS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

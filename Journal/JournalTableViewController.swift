@@ -11,12 +11,18 @@ class JournalTableViewController: UITableViewController {
 
     let cellReuseIdentifier = "JournalEntryCell"
     let journalEntrySegueIdentifier = "journalEntry"
-    let journal = Journal(entries: (0..<1000).map { JournalEntry(date: NSDate(), contents: "Contents for entry \($0)") })
+    let newJournalEntrySegueIdentifier = "newJournalEntry"
+    let journal = Journal(entries: (0..<4).map { JournalEntry(date: NSDate(), contents: "Contents for entry \($0)") })
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,6 +52,10 @@ class JournalTableViewController: UITableViewController {
                 indexPath = self.tableView.indexPathForCell(cell),
                 entry = journal.entry(indexPath.row) {
                     journalEntryViewController.journalEntry = entry
+            }
+        } else if segue.identifier == newJournalEntrySegueIdentifier {
+            if let newJournalEntryViewController = segue.destinationViewController as? NewJournalEntryViewController {
+                newJournalEntryViewController.journal = journal
             }
         }
     }
