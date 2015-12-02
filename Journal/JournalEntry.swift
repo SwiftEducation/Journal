@@ -7,7 +7,7 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 
 import Foundation
 
-class JournalEntry: Printable {
+class JournalEntry: CustomStringConvertible {
     
     let date: NSDate
     let contents: String
