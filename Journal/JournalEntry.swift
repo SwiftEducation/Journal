@@ -9,18 +9,18 @@ import Foundation
 
 class JournalEntry: CustomStringConvertible {
     
-    let date: NSDate
+    let date: Date
     let contents: String
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     var description: String {
-        return dateFormatter.stringFromDate(date)
+        return dateFormatter.string(from: date)
     }
     
-    init(date: NSDate, contents: String) {
+    init(date: Date, contents: String) {
         self.date = date
         self.contents = contents
-        dateFormatter.dateStyle = .MediumStyle
-        dateFormatter.timeStyle = .ShortStyle
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
     }
     
 }
