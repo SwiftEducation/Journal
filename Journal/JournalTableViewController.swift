@@ -10,7 +10,7 @@ import UIKit
 class JournalTableViewController: UITableViewController {
 
     let cellReuseIdentifier = "JournalEntryCell"
-    let journal = Journal(entries: (0..<1000).map { JournalEntry(date: NSDate(), contents: "Contents for entry \($0)") })
+    let journal = Journal(entries: (0..<1000).map { JournalEntry(date: Date(), contents: "Contents for entry \($0)") })
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +23,18 @@ class JournalTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return journal.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) 
         if let label = cell.textLabel,
-            entry = journal.entry(indexPath.row) {
+            let entry = journal.entry(indexPath.row) {
             label.text = "\(entry)"
         }
         return cell
