@@ -10,7 +10,7 @@ import UIKit
 class JournalTableViewController: UITableViewController {
 
     let cellReuseIdentifier = "JournalEntryCell"
-    let journal = Journal(entries: (0..<1000).map { JournalEntry(date: NSDate(), contents: "Contents for entry \($0)") })
+    let journal = Journal(entries: (0..<1000).map { JournalEntry(date: Date(), contents: "Contents for entry \($0)") })
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,28 +21,28 @@ class JournalTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return journal.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier, forIndexPath: indexPath) 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) 
         if let label = cell.textLabel,
-            entry = journal.entry(indexPath.row) {
+            let entry = journal.entry(indexPath.row) {
             label.text = "\(entry)"
         }
         return cell
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let journalEntryViewController = segue.destinationViewController as? JournalEntryViewController,
-            cell = sender as? UITableViewCell,
-            indexPath = self.tableView.indexPathForCell(cell),
-            entry = journal.entry(indexPath.row) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let journalEntryViewController = segue.destination as? JournalEntryViewController,
+            let cell = sender as? UITableViewCell,
+            let indexPath = self.tableView.indexPath(for: cell),
+            let entry = journal.entry(indexPath.row) {
                 journalEntryViewController.journalEntry = entry
         }
     }
