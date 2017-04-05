@@ -18,11 +18,11 @@ class Journal {
         self.entries = entries
     }
 
-    func addEntry(entry: JournalEntry) {
+    func addEntry(_ entry: JournalEntry) {
         entries.append(entry)
     }
     
-    func entry(index: Int) -> JournalEntry? {
+    func entry(_ index: Int) -> JournalEntry? {
         if index >= 0 && index < count {
             return entries[index]
         } else {
