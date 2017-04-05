@@ -9,8 +9,8 @@ import UIKit
 
 class NewJournalEntryViewController: UIViewController {
 
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
 }
