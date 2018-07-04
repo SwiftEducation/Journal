@@ -1,5 +1,9 @@
 <img align="right" src="https://github.com/SwiftEducation/Journal/raw/master/Journal/Images.xcassets/AppIcon.appiconset/Icon-Spotlight-40@2x.png" />
 
+## Deprecation Warning
+
+The Swift Education materials are out of date, and are no longer maintained.
+
 # Journal
 
 ### Level 4, Eleven Lessons
